@@ -1,0 +1,207 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap');
+body {
+    margin: 0;
+    background-color: #b9c863;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+	-ms-flex-line-pack: center;
+        align-content: center;
+        height: 100vh;
+        width: 100vw;
+    font-family: 'Quicksand', sans-serif;
+}
+.movingCar {
+    width: 1102px;
+    height: 582px;
+    position: relative;
+    border: 20px solid #fff;
+    border-radius: 50px;
+    overflow: hidden;
+    -webkit-box-shadow: 5px 5px 15px 0px #0000003d;
+            box-shadow: 5px 5px 15px 0px #0000003d;
+    background: url("./images/bg.jpg");
+    background-size: cover;
+    padding-right: 50px;
+    padding-bottom: 30px;
+}
+.movingCar h1 {
+    font-size: 60px;
+    text-transform: uppercase;
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    margin: 0;
+    color: #fff;
+    text-shadow: 4px 4px 0px #0000005c;
+}
+.movingCar .theRoad {
+    position: absolute;
+} 
+.movingCar .moveCar {
+    offset-path: path('M0.342087 551.5H519.837C575.284 551.5 620.232 506.552 620.232 451.105V451.105C620.232 395.658 665.181 350.71 720.627 350.71H965.383C1023.71 350.71 1071 303.423 1071 245.092V245.092C1071 186.762 1023.71 139.475 965.383 139.475H291.926C233.595 139.475 186.309 186.762 186.309 245.092V245.092C186.309 303.423 233.596 350.71 291.926 350.71H333.028C414.058 350.71 479.746 285.021 479.746 203.991V0');
+    animation: move 13000ms infinite forwards ease-in-out;
+    width: 100px;
+    padding-bottom: 30px;
+    z-index: 99;
+    position: relative;
+}
+@keyframes move {
+    100% { 
+        motion-offset: 100%;
+        offset-distance: 100%;
+    }
+}
+
+.floatImg {
+    position: absolute;
+}
+.tree {
+    max-width:110px;
+    z-index: 9;
+}
+.movingCar .tree:nth-child(5n+1){
+    top: 60px;
+    left: 100px;
+}
+.movingCar .tree:nth-child(5n+2){
+    top: 60px;
+    right: 30px;
+}
+.movingCar .tree:nth-child(5n+3){
+    top: 200px;
+    left: 600px;
+}
+.movingCar .tree:nth-child(5n+4){
+    bottom: 100px;
+    left: 20px;
+}
+.movingCar .tree:nth-child(5n){
+    bottom: 100px;
+    left: 400px;
+}
+
+.cloud {
+    
+    animation: moveCloud 1500ms ease-in-out infinite alternate;
+    transform-box: fill-box;
+    transform-origin: bottom;
+}
+.movingCar .cloud:nth-child(4n+1){
+    width: 110px;
+    top: 30px;
+    left: 200px;
+    animation-delay: 200ms;
+}
+.movingCar .cloud:nth-child(4n+2){
+    width: 130px;
+    top: 380px;
+    left: 150px;
+    animation-delay: 350ms;
+}
+.movingCar .cloud:nth-child(4n+3){
+    width: 100px;
+    top: 40px;
+    right: 400px;
+    animation-duration: 1s;
+}
+.movingCar .cloud:nth-child(4n){
+    max-width: 170px;
+    right: 230px;
+    bottom: 150px;
+}
+
+@keyframes moveCloud
+{
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(20px);
+    }
+}
+.car{
+    max-width: 100px;}
+    
+.movingCar .car:nth-child(3n+1){
+    right: 290px;
+    top: 270px;
+    animation:  boundCar 750ms ease-in-out 200ms infinite alternate;
+    transform-box: fill-box;
+}
+.movingCar .car:nth-child(3n+2){
+    right: 360px;
+    top: 60px;
+    max-width: 90px;
+    transform: rotateY(-180deg);
+    animation: boundCar 750ms ease-in-out 400ms infinite alternate;
+    transform-box: fill-box;
+}
+.movingCar .car:nth-child(3n) {
+    left: 299px;
+    top: 60px;
+    max-width: 90px;
+    transform: rotateY(-180deg);
+    animation: boundCar 750ms ease-in-out infinite alternate;
+    transform-box: fill-box;
+}
+@keyframes boundCar 
+{
+    0% {
+        transform: rotateX(0deg) translateY(-10%);
+    }
+    100% {
+        transform:rotateX(20deg) translateY(0); 
+    }
+}
+.house {
+    max-width: 130px;
+}
+.movingCar .house:nth-child(4n+1) {
+    bottom: 100px;
+    left: 240px;
+}
+.movingCar .house:nth-child(4n+2) {
+    max-width: 120px;
+    bottom: 100px;
+    right: 370px;
+}
+.movingCar .house:nth-child(4n+3) {
+    max-width: 80px;
+    top: 20px;
+    left: 520px;
+}
+.movingCar .house:nth-child(4n) {
+    max-width: 100px;
+    left: 30px;
+}
+
+.marker {
+    max-width: 70px;
+}
+.movingCar .marker:nth-child(5n+1) {
+    top: 200px;
+    left: 250px;
+}
+.movingCar .marker:nth-child(5n+2) {
+    top: 130px;
+    right: 250px;
+}
+.movingCar .marker:nth-child(5n+3) {
+    bottom: 70px;
+    left: 100px;
+}
+.movingCar .marker:nth-child(5n+4) {
+    bottom: 200px;
+    right: 100px;
+}
+.movingCar .marker:nth-child(5n) {
+    bottom: 250px;
+    left: 500px;
+}
